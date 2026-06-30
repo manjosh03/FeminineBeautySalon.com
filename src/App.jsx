@@ -248,10 +248,10 @@ function Hero() {
           </p>
 
           <h2 className="font-serif text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-            Reimagine{" "}
-            <span className="italic text-[#d6b680]">Beauty</span>,
+            Smooth{" "}
+            <span className="italic text-[#d6b680]">Skin</span>,
             <br />
-            Redefine Luxury
+            Styled Beauty
           </h2>
 
           <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#e8e2d8] sm:text-lg md:text-xl md:leading-8">
@@ -278,7 +278,7 @@ function Hero() {
 
           <div className="mt-14 grid max-w-2xl grid-cols-1 gap-6 border-l border-[#3a3126] pl-6 sm:grid-cols-3">
             <Stat number="10+" label="Years Excellence" />
-            <Stat number="4.9★" label="Google Rating" />
+            <Stat number="5★" label="Google Rating" />
             <Stat number="5k+" label="Clients Served" />
           </div>
         </div>
@@ -310,7 +310,7 @@ function Services({
         <SectionHeader
           eyebrow="Our Offerings"
           title="Services & Pricing"
-          text="From precision hair styling and bespoke colors to luxury manicures, skin therapies, lashes, and makeup artistry."
+          text="From smooth waxing and precise eyebrow threading to hairstyling, makeup, manicures, pedicures, and relaxing massage services."
         />
 
         <div className="mb-16 flex flex-wrap justify-center gap-4">
@@ -555,7 +555,7 @@ function Contact() {
             <iframe
               title="Feminine Beauty Salon Location"
               src="https://www.google.com/maps?q=15482%2085a%20Ave,%20Surrey,%20BC&output=embed"
-              className="h-full min-h-[500px] w-full grayscale"
+              className="h-full min-h-[500px] w-full"
               loading="lazy"
             ></iframe>
           </div>
