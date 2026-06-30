@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/Femininebeautysalon.com/',
+  base: '/FeminineBeautySalon.com/',
   plugins: [react(), tailwindcss()],
-
 })
