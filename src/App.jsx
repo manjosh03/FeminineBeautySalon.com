@@ -95,16 +95,33 @@ const services = [
 
 const reviews = [
   {
-    name: "Sophia Martinez",
-    text: "The salon feels so luxurious and peaceful. My hair styling was exactly what I wanted.",
+    name: "Lovepreet Pandher",
+    rating: 5,
+    
+    text: "It was my first time going with her and I must say that she is really nice. I got my threading and waxing done and it’s not painful. Her style of providing services is really warm and welcoming, which makes you comfortable. I’ll definitely go again.",
   },
   {
-    name: "Alaina Thorne",
-    text: "The facial was amazing. My skin felt clean, fresh, and glowing after the treatment.",
+    name: "Sonia Dhupar",
+    rating: 5,
+    
+    text: "Komal made my waxing effortlessly pain free. Very friendly, comfortable and clean environment. Also gave me personalised advice. Strongly recommended.",
   },
   {
-    name: "Maya Gill",
-    text: "Beautiful atmosphere, professional staff, and excellent service. I would definitely come back.",
+    name: "Anushka Bhadra",
+    rating: 5,
+   
+    text: "I must say she is quite fast and confident while providing her services. She did my eyebrow threading in so less time, even I was shocked, and I quite like the shape of my eyebrow too. She is also an awesome masseuse and very soft spoken.",
+  },
+  {
+    name: "Sowmya Rengasamy",
+    rating: 5,
+
+    text: "Visited Feminine Salon for eyebrow threading and facial. Komal ji is very kind and soft spoken. She did my eyebrows as requested and the facial massage was too good. I will visit her regularly going forward.",
+  },
+  {
+    name: "Beant Ranjit Gill",
+    rating: 5,
+    text: "Komalpreet is a nice, energetic lady. I went to her for party makeup before a week at her salon. She did an amazing job. Everyone praised me a lot at the function. I am really thankful to her and highly recommend her services at reasonable prices.",
   },
 ]
 
@@ -119,7 +136,7 @@ function App() {
       : services.filter((service) => service.category === activeCategory)
 
   return (
-    <div className="min-h-screen bg-[#080706] text-[#f8f5ef]">
+      <div className="min-h-screen overflow-x-hidden bg-[#080706] text-[#f8f5ef]">
       <Navbar />
       <Hero />
       <Services
@@ -137,43 +154,79 @@ function App() {
 }
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "About", href: "#about" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "Contact", href: "#contact" },
+  ]
+
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#2e261d] bg-[#080706]/90 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#home">
-          <h1 className="font-serif text-2xl font-semibold tracking-[0.25em] text-white md:text-3xl">
-            FEMININE BEAUTY
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#2e261d] bg-[#080706]/95 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" className="min-w-0">
+          <h1 className="font-serif text-xl font-semibold tracking-[0.18em] text-white sm:text-2xl lg:text-3xl">
+            FEMININE BEAUTY SALON
           </h1>
-          <p className="mt-1 text-xs font-semibold tracking-[0.35em] text-[#d6b680]">
+          <p className="mt-1 text-[10px] font-semibold tracking-[0.3em] text-[#d6b680] sm:text-xs">
             BEAUTY & WELLNESS
           </p>
         </a>
 
-        <div className="hidden items-center gap-10 text-sm font-bold uppercase tracking-[0.2em] text-[#b8b5ae] md:flex">
-          <a className="transition hover:text-[#d6b680]" href="#home">
-            Home
-          </a>
-          <a className="transition hover:text-[#d6b680]" href="#services">
-            Services
-          </a>
-          <a className="transition hover:text-[#d6b680]" href="#about">
-            About
-          </a>
-          <a className="transition hover:text-[#d6b680]" href="#reviews">
-            Reviews
-          </a>
-          <a className="transition hover:text-[#d6b680]" href="#contact">
-            Contact
-          </a>
+        <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] text-[#b8b5ae] lg:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              className="transition hover:text-[#d6b680]"
+              href={link.href}
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
 
         <a
           href="#contact"
-          className="hidden rounded-full border border-[#d6b680] px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-[#d6b680] transition hover:bg-[#d6b680] hover:text-black lg:block"
+          className="hidden rounded-full border border-[#d6b680] px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[#d6b680] transition hover:bg-[#d6b680] hover:text-black xl:block"
         >
           Book Appointment
         </a>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="rounded-full border border-[#3a3126] px-4 py-2 text-sm font-bold uppercase tracking-[0.15em] text-[#d6b680] lg:hidden"
+        >
+          Menu
+        </button>
       </nav>
+
+      {isOpen && (
+        <div className="border-t border-[#2e261d] bg-[#080706] px-6 py-6 lg:hidden">
+          <div className="flex flex-col gap-5 text-sm font-bold uppercase tracking-[0.2em] text-[#b8b5ae]">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="transition hover:text-[#d6b680]"
+              >
+                {link.name}
+              </a>
+            ))}
+
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 rounded-full bg-[#d6b680] px-6 py-3 text-center text-black"
+            >
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
@@ -182,47 +235,52 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center bg-cover bg-center px-6 pt-28"
+      className="relative flex min-h-screen items-center bg-cover bg-center px-4 pt-32 sm:px-6 lg:px-8"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.74), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80')",
+          "linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.78), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80')",
       }}
     >
       <div className="mx-auto w-full max-w-7xl">
-        <p className="mb-6 text-sm font-bold uppercase tracking-[0.5em] text-[#d6b680] md:text-lg">
-          Welcome to Feminine Beauty Salon
-        </p>
+        <div className="max-w-4xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#d6b680] sm:text-sm md:text-base">
+            Welcome to Feminine Beauty Salon
+          </p>
 
-        <h2 className="max-w-5xl font-serif text-6xl font-semibold leading-tight text-white md:text-8xl">
-          Reimagine <span className="italic text-[#d6b680]">Beauty</span>,
-          <br />
-          Redefine Luxury
-        </h2>
+          <h2 className="font-serif text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            Reimagine{" "}
+            <span className="italic text-[#d6b680]">Beauty</span>,
+            <br />
+            Redefine Luxury
+          </h2>
 
-        <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#e8e2d8] md:text-xl">
-          Indulge in premium beauty services designed to reveal your confidence,
-          radiance, and personal style in a relaxing salon experience.
-        </p>
+          <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#e8e2d8] sm:text-lg md:text-xl md:leading-8">
+            Indulge in premium beauty services designed to reveal your
+            confidence, radiance, and personal style in a relaxing salon
+            experience.
+          </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            className="rounded-full bg-[#d6b680] px-8 py-4 text-center text-sm font-black uppercase tracking-[0.2em] text-black transition hover:bg-[#c29f65]"
-          >
-            Book via WhatsApp
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-[#6f5a3b] px-8 py-4 text-center text-sm font-black uppercase tracking-[0.2em] text-white transition hover:border-[#d6b680] hover:text-[#d6b680]"
-          >
-            Call to Book
-          </a>
-        </div>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#contact"
+              className="rounded-full bg-[#d6b680] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-black transition hover:bg-[#c29f65] sm:text-sm"
+            >
+              Book via WhatsApp
+            </a>
 
-        <div className="mt-20 grid max-w-2xl grid-cols-3 gap-6 border-l border-[#3a3126] pl-6">
-          <Stat number="10+" label="Years Excellence" />
-          <Stat number="4.9★" label="Google Rating" />
-          <Stat number="5k+" label="Clients Served" />
+            <a
+              href="#contact"
+              className="rounded-full border border-[#6f5a3b] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-white transition hover:border-[#d6b680] hover:text-[#d6b680] sm:text-sm"
+            >
+              Call to Book
+            </a>
+          </div>
+
+          <div className="mt-14 grid max-w-2xl grid-cols-1 gap-6 border-l border-[#3a3126] pl-6 sm:grid-cols-3">
+            <Stat number="10+" label="Years Excellence" />
+            <Stat number="4.9★" label="Google Rating" />
+            <Stat number="5k+" label="Clients Served" />
+          </div>
         </div>
       </div>
     </section>
@@ -392,36 +450,59 @@ function Feature({ title, text }) {
 
 function Reviews() {
   return (
-    <section id="reviews" className="bg-[#111114] px-6 py-28">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="reviews"
+      className="bg-[#111114] px-4 py-24 sm:px-6 lg:px-8 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Client Love"
           title="Loved By Our Clients"
-          text="Our clients trust us for professional care, premium treatments, and a relaxing salon experience."
+          text="Real client experiences from Google reviews, highlighting our threading, waxing, makeup, facial, and massage services."
         />
 
-        <div className="mx-auto mb-16 flex max-w-xl items-center justify-center gap-6 rounded-3xl border border-[#332a22] bg-[#171719] p-6">
+        <div className="mx-auto mb-14 flex max-w-xl flex-col items-center justify-center gap-4 rounded-3xl border border-[#332a22] bg-[#171719] p-6 text-center sm:flex-row">
           <span className="rounded-2xl border border-[#4a3a28] bg-[#211d19] px-6 py-4 font-serif text-3xl text-[#d6b680]">
-            4.9★
+            5.0★
           </span>
+
           <p className="text-sm font-black uppercase tracking-[0.2em] text-[#c8c5bd]">
-            Based on verified client reviews
+            Featured Google Reviews
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {reviews.map((review) => (
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          {reviews.map((review, index) => (
             <div
-              key={review.name}
-              className="rounded-3xl border border-[#332a22] bg-[#171719] p-8"
+              key={index}
+              className="flex min-h-[360px] flex-col justify-between rounded-3xl border border-[#332a22] bg-[#171719] p-7 transition duration-300 hover:-translate-y-2 hover:border-[#d6b680]"
             >
-              <p className="text-2xl text-[#d6b680]">★★★★★</p>
-              <p className="mt-6 text-lg italic leading-8 text-[#e8e2d8]">
-                “{review.text}”
-              </p>
-              <h3 className="mt-8 font-bold text-white">{review.name}</h3>
+              <div>
+                <p className="text-xl tracking-[0.12em] text-[#d6b680]">
+                  {"★".repeat(review.rating)}
+                </p>
+
+                <p className="mt-6 text-sm italic leading-7 text-[#e8e2d8]">
+                  “{review.text}”
+                </p>
+              </div>
+
+              <div className="mt-8 border-t border-[#332a22] pt-5">
+                <h3 className="font-bold text-white">{review.name}</h3>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="https://www.google.com/maps/place/Feminine+Beauty+Salon/@49.157956,-122.793014,19z/data=!4m14!1m5!3m4!2zNDnCsDA5JzI4LjYiTiAxMjLCsDQ3JzM0LjkiVw!8m2!3d49.1579444!4d-122.7930278!3m7!1s0x5485d175348137a5:0x33d8330f8e331663!8m2!3d49.1580211!4d-122.7929276!9m1!1b1!16s%2Fg%2F11rxtvf39t?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded-full border border-[#d6b680] px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#d6b680] transition hover:bg-[#d6b680] hover:text-black"
+          >
+            View More Google Reviews
+          </a>
         </div>
       </div>
     </section>

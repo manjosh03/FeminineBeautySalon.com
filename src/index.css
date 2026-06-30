@@ -4,11 +4,16 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: #080706;
   color: #f8f5ef;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .font-serif {
