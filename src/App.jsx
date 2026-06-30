@@ -136,7 +136,7 @@ function App() {
       : services.filter((service) => service.category === activeCategory)
 
   return (
-      <div className="min-h-screen overflow-x-hidden bg-[#080706] text-[#f8f5ef]">
+      <div className="min-h-screen overflow-x-hidden bg-[#FAF6EC] text-[#f8f5ef]">
       <Navbar />
       <Hero />
       <Services
@@ -165,22 +165,22 @@ function Navbar() {
   ]
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#2e261d] bg-[#080706]/95 backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#D8CBB8] bg-[#FAF6EC]/95 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#home" className="min-w-0">
-          <h1 className="font-serif text-xl font-semibold tracking-[0.18em] text-white sm:text-2xl lg:text-3xl">
+          <h1 className="font-serif text-xl font-semibold tracking-[0.18em] text-[#3B3028] sm:text-2xl lg:text-3xl">
             FEMININE BEAUTY SALON
           </h1>
-          <p className="mt-1 text-[10px] font-semibold tracking-[0.3em] text-[#d6b680] sm:text-xs">
+          <p className="mt-1 text-[10px] font-semibold tracking-[0.3em] text-[#6F8F72] sm:text-xs">
             BEAUTY & WELLNESS
           </p>
         </a>
 
-        <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] text-[#b8b5ae] lg:flex">
+        <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] text-[#756A5D] lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
-              className="transition hover:text-[#d6b680]"
+              className="transition hover:text-[#6F8F72]"
               href={link.href}
             >
               {link.name}
@@ -190,28 +190,28 @@ function Navbar() {
 
         <a
           href="#contact"
-          className="hidden rounded-full border border-[#d6b680] px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[#d6b680] transition hover:bg-[#d6b680] hover:text-black xl:block"
+          className="hidden rounded-full border border-[#6F8F72] px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white xl:block"
         >
           Book Appointment
         </a>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full border border-[#3a3126] px-4 py-2 text-sm font-bold uppercase tracking-[0.15em] text-[#d6b680] lg:hidden"
+          className="rounded-full border border-[#D8CBB8] px-4 py-2 text-sm font-bold uppercase tracking-[0.15em] text-[#6F8F72] lg:hidden"
         >
           Menu
         </button>
       </nav>
 
       {isOpen && (
-        <div className="border-t border-[#2e261d] bg-[#080706] px-6 py-6 lg:hidden">
-          <div className="flex flex-col gap-5 text-sm font-bold uppercase tracking-[0.2em] text-[#b8b5ae]">
+        <div className="border-t border-[#D8CBB8] bg-[#FAF6EC] px-6 py-6 lg:hidden">
+          <div className="flex flex-col gap-5 text-sm font-bold uppercase tracking-[0.2em] text-[#756A5D]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="transition hover:text-[#d6b680]"
+                className="transition hover:text-[#6F8F72]"
               >
                 {link.name}
               </a>
@@ -220,7 +220,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-full bg-[#d6b680] px-6 py-3 text-center text-black"
+              className="mt-2 rounded-full bg-[#6F8F72] px-6 py-3 text-center text-white"
             >
               Book Appointment
             </a>
@@ -238,47 +238,45 @@ function Hero() {
       className="relative flex min-h-screen items-center bg-cover bg-center px-4 pt-32 sm:px-6 lg:px-8"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.78), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80')",
+          "linear-gradient(90deg, rgba(250,246,236,.97), rgba(250,246,236,.86), rgba(250,246,236,.25)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80')",
       }}
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#d6b680] sm:text-sm md:text-base">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#6F8F72] sm:text-sm md:text-base">
             Welcome to Feminine Beauty Salon
           </p>
 
-          <h2 className="font-serif text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-            Smooth{" "}
-            <span className="italic text-[#d6b680]">Skin</span>,
+          <h2 className="font-serif text-5xl font-semibold leading-[0.95] text-[#3B3028] sm:text-6xl md:text-7xl lg:text-8xl">
+            Soft Glow,
             <br />
-            Styled Beauty
+            <span className="italic text-[#6F8F72]">Natural Beauty</span>
           </h2>
 
-          <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#e8e2d8] sm:text-lg md:text-xl md:leading-8">
-            Indulge in premium beauty services designed to reveal your
-            confidence, radiance, and personal style in a relaxing salon
-            experience.
+          <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#756A5D] sm:text-lg md:text-xl md:leading-8">
+            From waxing and eyebrow threading to hairstyling, makeup, nails,
+            pedicures, and massage, we offer beauty care made personal.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="#contact"
-              className="rounded-full bg-[#d6b680] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-black transition hover:bg-[#c29f65] sm:text-sm"
+              className="rounded-full bg-[#6F8F72] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-[#5F7663] sm:text-sm"
             >
               Book via WhatsApp
             </a>
 
             <a
               href="#contact"
-              className="rounded-full border border-[#6f5a3b] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-white transition hover:border-[#d6b680] hover:text-[#d6b680] sm:text-sm"
+              className="rounded-full border border-[#6F8F72] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white sm:text-sm"
             >
               Call to Book
             </a>
           </div>
 
-          <div className="mt-14 grid max-w-2xl grid-cols-1 gap-6 border-l border-[#3a3126] pl-6 sm:grid-cols-3">
+          <div className="mt-14 grid max-w-2xl grid-cols-1 gap-6 border-l border-[#D8CBB8] pl-6 sm:grid-cols-3">
             <Stat number="10+" label="Years Excellence" />
-            <Stat number="5★" label="Google Rating" />
+            <Stat number="5.0★" label="Google Rating" />
             <Stat number="5k+" label="Clients Served" />
           </div>
         </div>
@@ -290,8 +288,8 @@ function Hero() {
 function Stat({ number, label }) {
   return (
     <div>
-      <p className="font-serif text-3xl text-[#d6b680]">{number}</p>
-      <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-[#b8b5ae]">
+      <p className="font-serif text-3xl text-[#6F8F72]">{number}</p>
+      <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-[#756A5D]">
         {label}
       </p>
     </div>
@@ -305,7 +303,7 @@ function Services({
   filteredServices,
 }) {
   return (
-    <section id="services" className="bg-[#111114] px-6 py-28">
+    <section id="services" className="bg-[#F1E8D9] px-6 py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Our Offerings"
@@ -320,8 +318,8 @@ function Services({
               onClick={() => setActiveCategory(category)}
               className={`rounded-full px-7 py-3 text-sm font-black uppercase tracking-[0.18em] transition ${
                 activeCategory === category
-                  ? "bg-[#d6b680] text-black"
-                  : "bg-[#232326] text-white hover:bg-[#302a23] hover:text-[#d6b680]"
+                  ? "bg-[#6F8F72] text-black"
+                  : "bg-[#FFFDF7] text-[#3B3028] hover:bg-[#E5DCCB] hover:text-[#6F8F72]"
               }`}
             >
               {category}
@@ -341,41 +339,41 @@ function Services({
 
 function ServiceCard({ service }) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-[#332a22] bg-[#171719] shadow-2xl transition duration-300 hover:-translate-y-2 hover:border-[#d6b680]">
+    <article className="overflow-hidden rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] shadow-2xl transition duration-300 hover:-translate-y-2 hover:border-[#6F8F72]">
       <div className="relative h-64 overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
           className="h-full w-full object-cover opacity-80 transition duration-500 hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#171719] to-transparent"></div>
-        <span className="absolute right-5 top-5 rounded-full bg-[#15120f] px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#d6b680]">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF7] to-transparent"></div>
+        <span className="absolute right-5 top-5 rounded-full bg-[#15120f] px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#6F8F72]">
           {service.category}
         </span>
       </div>
 
       <div className="p-7">
-        <h3 className="font-serif text-3xl font-semibold text-white">
+        <h3 className="font-serif text-3xl font-semibold text-[#3B3028]">
           {service.title}
         </h3>
 
-        <div className="mt-4 flex gap-5 text-sm font-bold text-[#d6b680]">
+        <div className="mt-4 flex gap-5 text-sm font-bold text-[#6F8F72]">
           <span>{service.price}</span>
-          <span className="text-[#9c9890]">{service.time}</span>
+          <span className="text-[#756A5D]">{service.time}</span>
         </div>
 
-        <p className="mt-5 leading-7 text-[#c8c5bd]">{service.description}</p>
+        <p className="mt-5 leading-7 text-[#756A5D]">{service.description}</p>
 
         <div className="mt-8 flex gap-3">
           <a
             href="#contact"
-            className="flex-1 rounded-2xl bg-[#d6b680] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-black"
+            className="flex-1 rounded-2xl bg-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-black"
           >
             WhatsApp
           </a>
           <a
             href="#contact"
-            className="flex-1 rounded-2xl border border-[#3a3126] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-[#d6b680]"
+            className="flex-1 rounded-2xl border border-[#D8CBB8] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-[#6F8F72]"
           >
             Call Book
           </a>
@@ -387,41 +385,41 @@ function ServiceCard({ service }) {
 
 function About() {
   return (
-    <section id="about" className="bg-[#080706] px-6 py-28">
+    <section id="about" className="bg-[#FAF6EC] px-6 py-28">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
-        <div className="relative rounded-3xl border border-[#332a22] bg-[#151515] p-5">
+        <div className="relative rounded-3xl border border-[#D8CBB8] bg-[#151515] p-5">
           <img
             src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80"
             alt="Salon client"
             className="h-[520px] w-full rounded-2xl object-cover md:h-[600px]"
           />
 
-          <div className="absolute bottom-10 right-5 rounded-3xl border border-[#332a22] bg-[#171719] p-8 shadow-2xl md:right-[-30px]">
-            <p className="font-serif text-4xl text-[#d6b680]">10+</p>
-            <p className="mt-2 text-sm font-black uppercase tracking-[0.2em] text-[#c8c5bd]">
+          <div className="absolute bottom-10 right-5 rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] p-8 shadow-2xl md:right-[-30px]">
+            <p className="font-serif text-4xl text-[#6F8F72]">10+</p>
+            <p className="mt-2 text-sm font-black uppercase tracking-[0.2em] text-[#756A5D]">
               Years of Beauty Artistry
             </p>
           </div>
         </div>
 
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.5em] text-[#d6b680]">
+          <p className="text-sm font-bold uppercase tracking-[0.5em] text-[#6F8F72]">
             About Feminine Beauty
           </p>
 
-          <h2 className="mt-5 font-serif text-5xl font-semibold leading-tight text-white md:text-7xl">
+          <h2 className="mt-5 font-serif text-5xl font-semibold leading-tight text-[#3B3028] md:text-7xl">
             Empowering Your Confidence
           </h2>
 
-          <div className="mt-8 h-px w-28 bg-[#d6b680]"></div>
+          <div className="mt-8 h-px w-28 bg-[#6F8F72]"></div>
 
-          <p className="mt-8 text-lg font-semibold leading-8 text-[#f1ede5]">
+          <p className="mt-8 text-lg font-semibold leading-8 text-[#6F8F72]">
             Feminine Beauty Salon was built on the belief that self-care is a
             necessity, not an afterthought. We create a calm, luxury space where
             every client feels seen, relaxed, and confident.
           </p>
 
-          <p className="mt-6 leading-8 text-[#c8c5bd]">
+          <p className="mt-6 leading-8 text-[#756A5D]">
             Our team offers professional styling, skin care, nail treatments,
             makeup, lash services, and personalized consultations with careful
             attention to detail.
@@ -441,9 +439,9 @@ function About() {
 
 function Feature({ title, text }) {
   return (
-    <div className="rounded-2xl border border-[#332a22] bg-[#121214] p-6">
-      <h3 className="font-serif text-2xl font-semibold text-white">{title}</h3>
-      <p className="mt-3 leading-7 text-[#b8b5ae]">{text}</p>
+    <div className="rounded-2xl border border-[#D8CBB8] bg-[#FFFDF7] p-6">
+      <h3 className="font-serif text-2xl font-semibold text-[#3B3028]">{title}</h3>
+      <p className="mt-3 leading-7 text-[#756A5D]">{text}</p>
     </div>
   )
 }
@@ -452,7 +450,7 @@ function Reviews() {
   return (
     <section
       id="reviews"
-      className="bg-[#111114] px-4 py-24 sm:px-6 lg:px-8 lg:py-28"
+      className="bg-[#F1E8D9] px-4 py-24 sm:px-6 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader
@@ -461,12 +459,12 @@ function Reviews() {
           text="Real client experiences from Google reviews, highlighting our threading, waxing, makeup, facial, and massage services."
         />
 
-        <div className="mx-auto mb-14 flex max-w-xl flex-col items-center justify-center gap-4 rounded-3xl border border-[#332a22] bg-[#171719] p-6 text-center sm:flex-row">
-          <span className="rounded-2xl border border-[#4a3a28] bg-[#211d19] px-6 py-4 font-serif text-3xl text-[#d6b680]">
+        <div className="mx-auto mb-14 flex max-w-xl flex-col items-center justify-center gap-4 rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] p-6 text-center sm:flex-row">
+          <span className="rounded-2xl border border-[#D8CBB8] bg-[#F1E8D9] px-6 py-4 font-serif text-3xl text-[#6F8F72]">
             5.0★
           </span>
 
-          <p className="text-sm font-black uppercase tracking-[0.2em] text-[#c8c5bd]">
+          <p className="text-sm font-black uppercase tracking-[0.2em] text-[#756A5D]">
             Featured Google Reviews
           </p>
         </div>
@@ -475,20 +473,20 @@ function Reviews() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="flex min-h-[360px] flex-col justify-between rounded-3xl border border-[#332a22] bg-[#171719] p-7 transition duration-300 hover:-translate-y-2 hover:border-[#d6b680]"
+              className="flex min-h-[360px] flex-col justify-between rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] p-7 transition duration-300 hover:-translate-y-2 hover:border-[#6F8F72]"
             >
               <div>
-                <p className="text-xl tracking-[0.12em] text-[#d6b680]">
+                <p className="text-xl tracking-[0.12em] text-[#6F8F72]">
                   {"★".repeat(review.rating)}
                 </p>
 
-                <p className="mt-6 text-sm italic leading-7 text-[#e8e2d8]">
+                <p className="mt-6 text-sm italic leading-7 text-[#3B3028]">
                   “{review.text}”
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-[#332a22] pt-5">
-                <h3 className="font-bold text-white">{review.name}</h3>
+              <div className="mt-8 border-t border-[#D8CBB8] pt-5">
+                <h3 className="font-bold text-[#3B3028]">{review.name}</h3>
               </div>
             </div>
           ))}
@@ -499,7 +497,7 @@ function Reviews() {
             href="https://www.google.com/maps/place/Feminine+Beauty+Salon/@49.157956,-122.793014,19z/data=!4m14!1m5!3m4!2zNDnCsDA5JzI4LjYiTiAxMjLCsDQ3JzM0LjkiVw!8m2!3d49.1579444!4d-122.7930278!3m7!1s0x5485d175348137a5:0x33d8330f8e331663!8m2!3d49.1580211!4d-122.7929276!9m1!1b1!16s%2Fg%2F11rxtvf39t?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noreferrer"
-            className="inline-block rounded-full border border-[#d6b680] px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#d6b680] transition hover:bg-[#d6b680] hover:text-black"
+            className="inline-block rounded-full border border-[#6F8F72] px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white"
           >
             View More Google Reviews
           </a>
@@ -511,7 +509,7 @@ function Reviews() {
 
 function Contact() {
   return (
-    <section id="contact" className="bg-[#080706] px-6 py-28">
+    <section id="contact" className="bg-[#FAF6EC] px-6 py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Plan Your Visit"
@@ -520,8 +518,8 @@ function Contact() {
         />
 
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-[#332a22] bg-[#171719] p-8 md:p-10">
-            <h3 className="font-serif text-3xl font-semibold text-white">
+          <div className="rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] p-8 md:p-10">
+            <h3 className="font-serif text-3xl font-semibold text-[#3B3028]">
               Salon Contacts
             </h3>
 
@@ -538,20 +536,20 @@ function Contact() {
               />
             </div>
 
-            <div className="my-8 h-px bg-[#332a22]"></div>
+            <div className="my-8 h-px bg-[#D8CBB8]"></div>
 
-            <h3 className="font-serif text-2xl font-semibold text-white">
+            <h3 className="font-serif text-2xl font-semibold text-[#3B3028]">
               Business Hours
             </h3>
 
-            <div className="mt-6 space-y-4 text-[#c8c5bd]">
+            <div className="mt-6 space-y-4 text-[#756A5D]">
               <Hour day="Monday - Friday" time="10:00 AM - 07:00 PM" />
               <Hour day="Saturday" time="11:00 AM - 06:00 PM" />
               <Hour day="Sunday" time="11:00 AM - 02:30 PM" />
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-[#332a22] bg-[#171719]">
+          <div className="overflow-hidden rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7]">
             <iframe
               title="Feminine Beauty Salon Location"
               src="https://www.google.com/maps?q=15482%2085a%20Ave,%20Surrey,%20BC&output=embed"
@@ -568,10 +566,10 @@ function Contact() {
 function ContactRow({ label, value }) {
   return (
     <div>
-      <p className="text-xs font-black uppercase tracking-[0.2em] text-[#8f8a82]">
+      <p className="text-xs font-black uppercase tracking-[0.2em] text-[#756A5D]">
         {label}
       </p>
-      <p className="mt-2 font-bold text-white">{value}</p>
+      <p className="mt-2 font-bold text-[#3B3028]">{value}</p>
     </div>
   )
 }
@@ -580,21 +578,21 @@ function Hour({ day, time }) {
   return (
     <div className="flex justify-between gap-6">
       <span>{day}</span>
-      <span className="font-bold text-white">{time}</span>
+      <span className="font-bold text-[#3B3028]">{time}</span>
     </div>
   )
 }
 
 function Footer() {
   return (
-    <footer className="border-t border-[#2e261d] bg-[#050504] px-6 py-12 text-center">
-      <h2 className="font-serif text-3xl font-semibold tracking-[0.25em] text-white">
+    <footer className="border-t border-[#D8CBB8] bg-[#F1E8D9] px-6 py-12 text-center">
+      <h2 className="font-serif text-3xl font-semibold tracking-[0.25em] text-[#3B3028]">
         FEMININE BEAUTY SALON
       </h2>
-      <p className="mt-3 text-xs font-bold uppercase tracking-[0.35em] text-[#d6b680]">
+      <p className="mt-3 text-xs font-bold uppercase tracking-[0.35em] text-[#6F8F72]">
         Reimagine Beauty
       </p>
-      <p className="mt-8 text-xs uppercase tracking-[0.2em] text-[#8f8a82]">
+      <p className="mt-8 text-xs uppercase tracking-[0.2em] text-[#756A5D]">
         © 2026 Feminine Beauty Salon. All rights reserved.
       </p>
     </footer>
@@ -604,14 +602,14 @@ function Footer() {
 function SectionHeader({ eyebrow, title, text }) {
   return (
     <div className="mx-auto mb-16 max-w-3xl text-center">
-      <p className="text-sm font-bold uppercase tracking-[0.5em] text-[#d6b680]">
+      <p className="text-sm font-bold uppercase tracking-[0.5em] text-[#6F8F72]">
         {eyebrow}
       </p>
-      <h2 className="mt-5 font-serif text-5xl font-semibold text-white md:text-7xl">
+      <h2 className="mt-5 font-serif text-5xl font-semibold text-[#3B3028] md:text-7xl">
         {title}
       </h2>
-      <div className="mx-auto mt-8 h-px w-32 bg-[#d6b680]"></div>
-      <p className="mt-8 text-lg leading-8 text-[#e8e2d8]">{text}</p>
+      <div className="mx-auto mt-8 h-px w-32 bg-[#6F8F72]"></div>
+      <p className="mt-8 text-lg leading-8 text-[#3B3028]">{text}</p>
     </div>
   )
 }
