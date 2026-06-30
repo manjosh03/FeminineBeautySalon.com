@@ -111,7 +111,7 @@ const reviews = [
 function App() {
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const categories = ["All", "Hair", "Nails", "Eyes", "Skin", "Makeup"]
+  const categories = ["All", "Waxing", "Brows", "Hair", "Makeup", "Nails", "Wellness"]
 
   const filteredServices =
     activeCategory === "All"
