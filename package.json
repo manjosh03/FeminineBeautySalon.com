@@ -1,7 +1,7 @@
 {
   "name": "feminine-beauty-salon",
   "homepage": "https://manjosh03.github.io/femininebeautysalon.com/",
-  "private": true,
+ 
   "version": "0.0.0",
   "type": "module",
   "scripts": {
