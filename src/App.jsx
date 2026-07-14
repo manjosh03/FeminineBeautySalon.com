@@ -2,94 +2,118 @@ import { useState } from "react"
 
 const services = [
   {
-    title: "Body Waxing",
-    category: "Waxing",
-    price: "From $35",
-    time: "30 min",
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Smooth and gentle body waxing services for clean, soft, and refreshed skin.",
-  },
-  {
-    title: "Brazilian Waxing",
-    category: "Waxing",
-    price: "From $55",
-    time: "40 min",
-    image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Professional Brazilian waxing with careful attention to comfort, hygiene, and smooth results.",
-  },
-  {
-    title: "Eyebrow Threading",
-    category: "Brows",
-    price: "From $15",
-    time: "15 min",
+    title: "Threading",
+    category: "Services",
     image:
       "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Precise eyebrow threading to shape, clean, and define your brows beautifully.",
-  },
-  {
-    title: "Hairstyling",
-    category: "Hair",
-    price: "From $45",
-    time: "45 min",
-    image:
-      "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Elegant hairstyling, blowouts, and finishing touches for everyday beauty or special events.",
-  },
-  {
-    title: "Makeup Services",
-    category: "Makeup",
-    price: "From $75",
-    time: "60 min",
-    image:
-      "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Flawless makeup services for parties, weddings, photoshoots, and special occasions.",
-  },
-  {
-    title: "Manicure",
-    category: "Nails",
-    price: "From $30",
-    time: "35 min",
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Relaxing manicure services with nail shaping, cuticle care, polish, and a clean finish.",
-  },
-  {
-    title: "Massage",
-    category: "Wellness",
-    price: "From $60",
-    time: "60 min",
-    image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Relaxing massage services designed to reduce stress and help you feel refreshed.",
-  },
-  {
-    title: "Pedicure",
-    category: "Nails",
-    price: "From $40",
-    time: "45 min",
-    image:
-      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80",
-    description:
-      "Luxury pedicure care for smooth feet, shaped nails, polish, and complete relaxation.",
+    description: "Precise threading services for a clean and defined look.",
+    items: ["Eyebrows", "Upper lips", "Chin", "Full face"],
   },
   {
     title: "Waxing",
-    category: "Waxing",
-    price: "From $25",
-    time: "25 min",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+    description: "Professional waxing services for smooth and soft skin.",
+    items: ["Legs", "Arms", "Brazilian", "Full body", "Bikini"],
+  },
+  {
+    title: "Facials",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+    description: "Relaxing facial treatments to refresh and brighten your skin.",
+    items: ["Herbal facial"],
+  },
+  {
+    title: "Bleach",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=80",
+    description: "Glow-enhancing bleach services for face and body.",
+    items: ["Instant glow", "Powder bleach", "Body bleach"],
+  },
+  {
+    title: "Party Makeup",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80",
+    description: "Beautiful party makeup with hairstyling for special events.",
+    items: ["HD party makeup with hair", "Regular party makeup with hair"],
+  },
+  {
+    title: "Bridal Makeup",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80",
+    description: "Elegant bridal makeup designed for your special day.",
+    items: ["HD bridal makeup", "Regular bridal makeup"],
+  },
+  {
+    title: "Hairstyles",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
+    description: "Stylish hair looks for parties, weddings, and everyday beauty.",
+    items: ["Updos", "Curls", "Crimping", "Waves"],
+  },
+  {
+    title: "Hair Cuts",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+    description: "Haircuts tailored to your face shape, style, and preference.",
+    items: ["Any type of cut"],
+  },
+  {
+    title: "Shampoo + Blow Dry",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
+    description: "Fresh shampoo and smooth blow dry for a polished finish.",
+    items: ["Shampoo", "Blow dry"],
+  },
+  {
+    title: "Hair Colour",
+    category: "Services",
+    image:
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+    description: "Professional hair colour services for a refreshed look.",
+    items: ["Roots touch-up", "Global colour"],
+  },
+  {
+    title: "Short Courses",
+    category: "Courses",
+    image:
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80",
+    description: "Beauty training courses for beginners and learners.",
+    items: ["Short beauty courses"],
+  },
+  {
+    title: "Self Grooming",
+    category: "Courses",
+    image:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+    description: "Learn personal grooming skills for everyday confidence.",
+    items: ["Self grooming course"],
+  },
+  {
+    title: "State Board Exam Preparation",
+    category: "Certification",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+    description:
+      "Preparation support for the Beauty Council State Board exam.",
+    items: ["Theory preparation", "Practical preparation"],
+  },
+  {
+    title: "Laser Hair Removal",
+    category: "Additional Service",
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
     description:
-      "Quick and gentle waxing services for brows, face, arms, legs, and other areas.",
+      "Laser hair removal using the latest Soprano Ice Platinum technology.",
+    items: ["Latest technology", "Soprano Ice Platinum", "Painless treatment"],
   },
 ]
 
@@ -128,7 +152,7 @@ const reviews = [
 function App() {
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const categories = ["All", "Waxing", "Brows", "Hair", "Makeup", "Nails", "Wellness"]
+  const categories = ["All", "Services", "Courses", "Certification", "Additional Service"]
 
   const filteredServices =
     activeCategory === "All"
@@ -307,8 +331,8 @@ function Services({
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Our Offerings"
-          title="Services & Pricing"
-          text="From smooth waxing and precise eyebrow threading to hairstyling, makeup, manicures, pedicures, and relaxing massage services."
+          title="Services, Courses & Certification"
+          text="Explore our beauty services, training courses, certification preparation, and advanced laser hair removal treatments."
         />
 
         <div className="mb-16 flex flex-wrap justify-center gap-4">
@@ -339,15 +363,17 @@ function Services({
 
 function ServiceCard({ service }) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] shadow-2xl transition duration-300 hover:-translate-y-2 hover:border-[#6F8F72]">
+    <article className="overflow-hidden rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] shadow-xl transition duration-300 hover:-translate-y-2 hover:border-[#6F8F72]">
       <div className="relative h-64 overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
-          className="h-full w-full object-cover opacity-80 transition duration-500 hover:scale-110"
+          className="h-full w-full object-cover opacity-90 transition duration-500 hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF7] to-transparent"></div>
-        <span className="absolute right-5 top-5 rounded-full bg-[#15120f] px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#6F8F72]">
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF7] via-transparent to-transparent"></div>
+
+        <span className="absolute right-5 top-5 rounded-full bg-[#FAF6EC] px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#6F8F72] shadow-md">
           {service.category}
         </span>
       </div>
@@ -357,25 +383,35 @@ function ServiceCard({ service }) {
           {service.title}
         </h3>
 
-        <div className="mt-4 flex gap-5 text-sm font-bold text-[#6F8F72]">
-          <span>{service.price}</span>
-          <span className="text-[#756A5D]">{service.time}</span>
-        </div>
+        <p className="mt-4 leading-7 text-[#756A5D]">
+          {service.description}
+        </p>
 
-        <p className="mt-5 leading-7 text-[#756A5D]">{service.description}</p>
+        <ul className="mt-6 space-y-3">
+          {service.items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-sm font-semibold text-[#3B3028]"
+            >
+              <span className="mt-1 h-2 w-2 rounded-full bg-[#6F8F72]"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-8 flex gap-3">
           <a
             href="#contact"
-            className="flex-1 rounded-2xl bg-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-black"
+            className="flex-1 rounded-2xl bg-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-white transition hover:bg-[#5F7663]"
           >
             WhatsApp
           </a>
+
           <a
             href="#contact"
-            className="flex-1 rounded-2xl border border-[#D8CBB8] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-[#6F8F72]"
+            className="flex-1 rounded-2xl border border-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white"
           >
-            Call Book
+            Call
           </a>
         </div>
       </div>
