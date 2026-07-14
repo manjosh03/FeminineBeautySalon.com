@@ -5,7 +5,7 @@ const services = [
     title: "Threading",
     category: "Services",
     image:
-      "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/29588096/pexels-photo-29588096.jpeg?_gl=1*okd5d6*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODM5OTk4MzkkajI0JGwwJGgw",
     description: "Precise threading services for a clean and defined look.",
     items: ["Eyebrows", "Upper lips", "Chin", "Full face"],
   },
@@ -13,7 +13,7 @@ const services = [
     title: "Waxing",
     category: "Services",
     image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/35103884/pexels-photo-35103884.jpeg?_gl=1*14q3b02*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODM5OTkzMzAkajU5JGwwJGgw",
     description: "Professional waxing services for smooth and soft skin.",
     items: ["Legs", "Arms", "Brazilian", "Full body", "Bikini"],
   },
@@ -37,7 +37,7 @@ const services = [
     title: "Party Makeup",
     category: "Services",
     image:
-      "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/6954014/pexels-photo-6954014.jpeg?_gl=1*xw4hps*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDA1ODckajMwJGwwJGgw",
     description: "Beautiful party makeup with hairstyling for special events.",
     items: ["HD party makeup with hair", "Regular party makeup with hair"],
   },
@@ -53,9 +53,9 @@ const services = [
     title: "Hairstyles",
     category: "Services",
     image:
-      "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/20046792/pexels-photo-20046792.jpeg?_gl=1*a7eafb*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDAwNTMkajU5JGwwJGgw",
     description: "Stylish hair looks for parties, weddings, and everyday beauty.",
-    items: ["Updos", "Curls", "Crimping", "Waves"],
+    items: ["Updo's", "Curls", "Crimping", "Waves"],
   },
   {
     title: "Hair Cuts",
@@ -63,21 +63,14 @@ const services = [
     image:
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
     description: "Haircuts tailored to your face shape, style, and preference.",
-    items: ["Any type of cut"],
+    items: ["Any type of cut", "Shampoo", "Blow dry"],
   },
-  {
-    title: "Shampoo + Blow Dry",
-    category: "Services",
-    image:
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
-    description: "Fresh shampoo and smooth blow dry for a polished finish.",
-    items: ["Shampoo", "Blow dry"],
-  },
+
   {
     title: "Hair Colour",
     category: "Services",
     image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/4981460/pexels-photo-4981460.jpeg?_gl=1*1xbhm6r*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODM5OTk1MzgkajU5JGwwJGgw",
     description: "Professional hair colour services for a refreshed look.",
     items: ["Roots touch-up", "Global colour"],
   },
@@ -93,7 +86,7 @@ const services = [
     title: "Self Grooming",
     category: "Courses",
     image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/7281776/pexels-photo-7281776.jpeg?_gl=1*105n3d9*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODM5OTkwMTUkajUzJGwwJGgw",
     description: "Learn personal grooming skills for everyday confidence.",
     items: ["Self grooming course"],
   },
@@ -101,7 +94,7 @@ const services = [
     title: "State Board Exam Preparation",
     category: "Certification",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/6954212/pexels-photo-6954212.jpeg?_gl=1*1g3w21v*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDA3MDgkajIkbDAkaDA.",
     description:
       "Preparation support for the Beauty Council State Board exam.",
     items: ["Theory preparation", "Practical preparation"],
@@ -110,7 +103,7 @@ const services = [
     title: "Laser Hair Removal",
     category: "Additional Service",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/16032298/pexels-photo-16032298.jpeg?_gl=1*c4nyk9*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDAyNzYkajE3JGwwJGgw",
     description:
       "Laser hair removal using the latest Soprano Ice Platinum technology.",
     items: ["Latest technology", "Soprano Ice Platinum", "Painless treatment"],
