@@ -1,6 +1,27 @@
 import { useState } from "react"
 
+const whatsappNumber = "+17788623471"
+
+const whatsappMessage =
+  "Hello, I would like to book an appointment at Feminine Beauty Salon."
+
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  whatsappMessage
+)}`
+
+const phoneNumber = "+17788623471"
+const phoneLink = `tel:${phoneNumber}`
+
 const services = [
+    {
+    title: "Laser Hair Removal",
+    category: "Services",
+    image:
+      "https://images.pexels.com/photos/16032298/pexels-photo-16032298.jpeg?_gl=1*c4nyk9*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDAyNzYkajE3JGwwJGgw",
+    description:
+      "Laser hair removal using the latest Soprano Ice Platinum technology.",
+    items: ["Latest technology", "Soprano Ice Platinum", "Painless treatment"],
+  },
   {
     title: "Threading",
     category: "Services",
@@ -23,7 +44,7 @@ const services = [
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
     description: "Relaxing facial treatments to refresh and brighten your skin.",
-    items: ["Herbal facial"],
+    items: ["Herbal facial (according to skin type)"] 
   },
   {
     title: "Bleach",
@@ -99,15 +120,7 @@ const services = [
       "Preparation support for the Beauty Council State Board exam.",
     items: ["Theory preparation", "Practical preparation"],
   },
-  {
-    title: "Laser Hair Removal",
-    category: "Additional Service",
-    image:
-      "https://images.pexels.com/photos/16032298/pexels-photo-16032298.jpeg?_gl=1*c4nyk9*_ga*NDM4NTE5MzYuMTc4Mzk5OTAwOA..*_ga_8JE65Q40S6*czE3ODM5OTkwMDgkbzEkZzEkdDE3ODQwMDAyNzYkajE3JGwwJGgw",
-    description:
-      "Laser hair removal using the latest Soprano Ice Platinum technology.",
-    items: ["Latest technology", "Soprano Ice Platinum", "Painless treatment"],
-  },
+
 ]
 
 const reviews = [
@@ -142,10 +155,101 @@ const reviews = [
   },
 ]
 
+const galleryImages = [
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-11.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-1.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-6.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-2.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-1.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-3.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-4.jpeg`,
+  },
+  
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-2.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-3.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-4.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-5.jpeg`,
+  },
+  
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-7.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-8.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-9.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-10.jpeg`,
+  },
+  
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-12.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-13.jpeg`,
+  },
+]
+
 function App() {
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const categories = ["All", "Services", "Courses", "Certification", "Additional Service"]
+  const categories = ["All", "Services", "Courses", "Certification"]
 
   const filteredServices =
     activeCategory === "All"
@@ -162,6 +266,7 @@ function App() {
         setActiveCategory={setActiveCategory}
         filteredServices={filteredServices}
       />
+      <Gallery />
       <About />
       <Reviews />
       <Contact />
@@ -176,6 +281,7 @@ function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
+    { name: "Gallery", href: "#gallery" },
     { name: "About", href: "#about" },
     { name: "Reviews", href: "#reviews" },
     { name: "Contact", href: "#contact" },
@@ -260,15 +366,15 @@ function Hero() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-4xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#6F8F72] sm:text-sm md:text-base">
-            Welcome to Feminine Beauty Salon
-          </p>
+<p className="mb-5 font-serif text-5xl font-semibold leading-tight tracking-[0.04em] text-[#6F8F72] sm:text-6xl md:text-7xl lg:text-8xl">
+  Welcome to Feminine Beauty Salon
+</p>
 
-          <h2 className="font-serif text-5xl font-semibold leading-[0.95] text-[#3B3028] sm:text-6xl md:text-7xl lg:text-8xl">
-            Soft Glow,
-            <br />
-            <span className="italic text-[#6F8F72]">Natural Beauty</span>
-          </h2>
+<h2 className="font-serif text-3xl font-semibold leading-[1.1] text-[#3B3028] sm:text-4xl md:text-5xl lg:text-6xl">
+  Soft Glow,
+  <br />
+  <span className="italic text-[#6F8F72]">Natural Beauty</span>
+</h2>
 
           <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#756A5D] sm:text-lg md:text-xl md:leading-8">
             From waxing and eyebrow threading to hairstyling, makeup, nails,
@@ -277,17 +383,19 @@ function Hero() {
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#contact"
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-[#6F8F72] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-[#5F7663] sm:text-sm"
             >
-              Book via WhatsApp
+               Book via WhatsApp
             </a>
 
             <a
-              href="#contact"
+              href={phoneLink}
               className="rounded-full border border-[#6F8F72] px-7 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white sm:text-sm"
             >
-              Call to Book
+            Call to Book
             </a>
           </div>
 
@@ -354,6 +462,148 @@ function Services({
   )
 }
 
+function Gallery() {
+  const [currentImage, setCurrentImage] = useState(0)
+  const [activeGalleryCategory, setActiveGalleryCategory] = useState("All")
+
+  const galleryCategories = ["All", "Hair", "Makeup"]
+
+  const filteredGalleryImages =
+    activeGalleryCategory === "All"
+      ? galleryImages
+      : galleryImages.filter(
+          (image) => image.category === activeGalleryCategory
+        )
+
+  const nextImage = () => {
+    setCurrentImage((prev) =>
+      prev === filteredGalleryImages.length - 1 ? 0 : prev + 1
+    )
+  }
+
+  const previousImage = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? filteredGalleryImages.length - 1 : prev - 1
+    )
+  }
+
+  const changeCategory = (category) => {
+    setActiveGalleryCategory(category)
+    setCurrentImage(0)
+  }
+
+  return (
+    <section
+      id="gallery"
+      className="bg-[#FAF6EC] px-4 py-24 sm:px-6 lg:px-8 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Our Work"
+          title="Salon Gallery"
+          text="A showcase of hair and makeup work completed at Feminine Beauty Salon."
+        />
+
+        <div className="mb-12 flex flex-wrap justify-center gap-4">
+          {galleryCategories.map((category) => (
+            <button
+              key={category}
+              onClick={() => changeCategory(category)}
+              className={`rounded-full px-7 py-3 text-sm font-black uppercase tracking-[0.18em] transition ${
+                activeGalleryCategory === category
+                  ? "bg-[#6F8F72] text-white"
+                  : "bg-[#FFFDF7] text-[#3B3028] hover:bg-[#E5DCCB] hover:text-[#6F8F72]"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#D8CBB8] bg-[#FFFDF7] p-4 shadow-xl">
+            <img
+              src={filteredGalleryImages[currentImage].image}
+              alt={filteredGalleryImages[currentImage].title}
+              className="h-[420px] w-full rounded-[1.5rem] object-contain sm:h-[520px] lg:h-[620px]"
+            />
+
+            <button
+              onClick={previousImage}
+              className="absolute left-6 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#FFFDF7]/90 text-3xl font-bold text-[#6F8F72] shadow-lg transition hover:bg-[#6F8F72] hover:text-white"
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="absolute right-6 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#FFFDF7]/90 text-3xl font-bold text-[#6F8F72] shadow-lg transition hover:bg-[#6F8F72] hover:text-white"
+              aria-label="Next image"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="rounded-[2rem] border border-[#D8CBB8] bg-[#FFFDF7] p-8 shadow-xl">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#6F8F72]">
+              Featured Work
+            </p>
+
+            <h3 className="mt-4 font-serif text-5xl font-semibold text-[#3B3028]">
+              {filteredGalleryImages[currentImage].title}
+            </h3>
+
+            <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-[#756A5D]">
+              {filteredGalleryImages[currentImage].category}
+            </p>
+
+            <p className="mt-6 leading-8 text-[#756A5D]">
+              Browse through our salon work, including hair styling and makeup
+              looks created for clients.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {filteredGalleryImages.map((image, index) => (
+                <button
+                  key={`${image.image}-dot`}
+                  onClick={() => setCurrentImage(index)}
+                  className={`h-3 rounded-full transition ${
+                    currentImage === index
+                      ? "w-10 bg-[#6F8F72]"
+                      : "w-3 bg-[#D8CBB8]"
+                  }`}
+                  aria-label={`View gallery image ${index + 1}`}
+                ></button>
+              ))}
+            </div>
+
+            <div className="mt-10 flex max-h-[260px] flex-wrap gap-3 overflow-y-auto pr-2">
+              {filteredGalleryImages.map((image, index) => (
+                <button
+                  key={image.image}
+                  onClick={() => setCurrentImage(index)}
+                  className={`overflow-hidden rounded-2xl border transition ${
+                    currentImage === index
+                      ? "border-[#6F8F72]"
+                      : "border-[#D8CBB8]"
+                  }`}
+                >
+                  <img
+                    src={image.image}
+                    alt={`${image.title} ${index + 1}`}
+                    className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ServiceCard({ service }) {
   return (
     <article className="overflow-hidden rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] shadow-xl transition duration-300 hover:-translate-y-2 hover:border-[#6F8F72]">
@@ -394,17 +644,21 @@ function ServiceCard({ service }) {
 
         <div className="mt-8 flex gap-3">
           <a
-            href="#contact"
-            className="flex-1 rounded-2xl bg-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-white transition hover:bg-[#5F7663]"
+          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          `Hello, I would like to book ${service.title} at Feminine Beauty Salon.`
+           )}`}
+           target="_blank"
+          rel="noreferrer"
+          className="flex-1 rounded-2xl bg-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-white transition hover:bg-[#5F7663]"
           >
-            WhatsApp
+          WhatsApp
           </a>
 
           <a
-            href="#contact"
+            href={phoneLink}
             className="flex-1 rounded-2xl border border-[#6F8F72] py-3 text-center text-xs font-black uppercase tracking-[0.15em] text-[#6F8F72] transition hover:bg-[#6F8F72] hover:text-white"
           >
-            Call
+          Call
           </a>
         </div>
       </div>
@@ -418,9 +672,9 @@ function About() {
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
         <div className="relative rounded-3xl border border-[#D8CBB8] bg-[#151515] p-5">
           <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80"
-            alt="Salon client"
-            className="h-[520px] w-full rounded-2xl object-cover md:h-[600px]"
+             src={`${import.meta.env.BASE_URL}gallery/Salon_Specialist.jpeg`}
+              alt="Feminine Beauty Salon"
+              className="h-[520px] w-full rounded-2xl bg-[#F1E8D9] object-cover md:h-[600px]"
           />
 
           <div className="absolute bottom-10 right-5 rounded-3xl border border-[#D8CBB8] bg-[#FFFDF7] p-8 shadow-2xl md:right-[-30px]">
@@ -553,8 +807,8 @@ function Contact() {
             </h3>
 
             <div className="mt-8 space-y-6">
-              <ContactRow label="Call Us" value="+1 (555) 123-4567" />
-              <ContactRow label="WhatsApp" value="+1 (555) 123-4567" />
+              <ContactRow label="Call Us" value="+1 (778) 862-3471" link={phoneLink} />
+              <ContactRow label="WhatsApp" value="+1 (778) 862-3471" />
               <ContactRow
                 label="Email"
                 value="appointments@femininebeautysalon.com"
@@ -592,13 +846,23 @@ function Contact() {
   )
 }
 
-function ContactRow({ label, value }) {
+function ContactRow({ label, value, link }) {
   return (
     <div>
       <p className="text-xs font-black uppercase tracking-[0.2em] text-[#756A5D]">
         {label}
       </p>
-      <p className="mt-2 font-bold text-[#3B3028]">{value}</p>
+
+      {link ? (
+        <a
+          href={link}
+          className="mt-2 block font-bold text-[#3B3028] transition hover:text-[#6F8F72]"
+        >
+          {value}
+        </a>
+      ) : (
+        <p className="mt-2 font-bold text-[#3B3028]">{value}</p>
+      )}
     </div>
   )
 }
