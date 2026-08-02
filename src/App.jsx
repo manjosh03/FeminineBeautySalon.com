@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const whatsappNumber = "+17788623471"
+const whatsappNumber = "+17788620471"
 
 const whatsappMessage =
   "Hello, I would like to book an appointment at Feminine Beauty Salon."
@@ -9,7 +9,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   whatsappMessage
 )}`
 
-const phoneNumber = "+17788623471"
+const phoneNumber = "+17788620471"
 const phoneLink = `tel:${phoneNumber}`
 
 const services = [
@@ -366,15 +366,18 @@ function Hero() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-4xl">
-<p className="mb-5 font-serif text-5xl font-semibold leading-tight tracking-[0.04em] text-[#6F8F72] sm:text-6xl md:text-7xl lg:text-8xl">
-  Welcome to Feminine Beauty Salon
-</p>
+          <p className="font-serif text-3xl font-semibold leading-[1.1] text-[#3B3028] sm:text-4xl md:text-5xl lg:text-6xl">
+            Welcome to
+          </p>
+          <h1 className="mt-2 font-serif text-5xl font-semibold leading-tight tracking-[0.04em] text-[#6F8F72] sm:text-6xl md:text-7xl lg:text-8xl">
+            Feminine Beauty Salon
+          </h1>
 
-<h2 className="font-serif text-3xl font-semibold leading-[1.1] text-[#3B3028] sm:text-4xl md:text-5xl lg:text-6xl">
+<h3 className="italic text-[#3B3028] sm:text-4xl md:text-5xl lg:text-6xl">
   Soft Glow,
   <br />
   <span className="italic text-[#6F8F72]">Natural Beauty</span>
-</h2>
+</h3>
 
           <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#756A5D] sm:text-lg md:text-xl md:leading-8">
             From waxing and eyebrow threading to hairstyling, makeup, nails,
@@ -807,11 +810,11 @@ function Contact() {
             </h3>
 
             <div className="mt-8 space-y-6">
-              <ContactRow label="Call Us" value="+1 (778) 862-3471" link={phoneLink} />
-              <ContactRow label="WhatsApp" value="+1 (778) 862-3471" />
+              <ContactRow label="Call Us" value="+1 (778) 862-0471" link={phoneLink} />
+              <ContactRow label="WhatsApp" value="+1 (778) 862-0471" />
               <ContactRow
                 label="Email"
-                value="appointments@femininebeautysalon.com"
+                value="femininebeautysalon1@gmail.com"
               />
               <ContactRow
                 label="Address"
