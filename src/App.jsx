@@ -413,15 +413,9 @@ function Hero() {
             Feminine Beauty Salon
           </h1>
 
-<h3 className="italic text-[#3B3028] sm:text-4xl md:text-5xl lg:text-6xl">
-  Soft Glow,
-  <br />
-  <span className="italic text-[#6F8F72]">Natural Beauty</span>
-</h3>
 
           <p className="mt-7 max-w-2xl text-base font-medium leading-7 text-[#756A5D] sm:text-lg md:text-xl md:leading-8">
-            From waxing and eyebrow threading to hairstyling, makeup, nails,
-            pedicures, and massage, we offer beauty care made personal.
+            From waxing, eyebrow threading to hairstyling and makeup, we offer beauty care made personal.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
