@@ -162,6 +162,46 @@ const galleryImages = [
     image: `${import.meta.env.BASE_URL}gallery/Hairstyle-11.jpeg`,
   },
   {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-14.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-15.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-16.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-17.jpeg`,
+  },
+  {
+    title: "Hair Styling",
+    category: "Hair",
+    image: `${import.meta.env.BASE_URL}gallery/Hairstyle-18.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-5.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-6.jpeg`,
+  },
+  {
+    title: "Makeup",
+    category: "Makeup",
+    image: `${import.meta.env.BASE_URL}gallery/Makeup-7.jpeg`,
+  },
+  {
     title: "Makeup",
     category: "Makeup",
     image: `${import.meta.env.BASE_URL}gallery/Makeup-1.jpeg`,
